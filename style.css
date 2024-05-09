@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to bottom left,
+    rgb(138, 166, 47),
+    rgb(47, 125, 165)
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+.btn {
+  padding: 25px 60px;
+  background-color: rgb(34, 135, 14);
+  box-shadow: 4px 4px 20px rgb(0, 0, 0, 0.4);
+  border-radius: 5px;
+  color: black;
+  font-size: 35px;
+  position: relative;
+  overflow: hidden;
+}
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: " ";
+  position: absolute;
+  background-color: rgb(114, 46, 46);
+  width: 0;
+  height: 0;
+  left: var(--xpos);
+  top: var(--ypos);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: wigth 0.5s, height 0.5s;
+}
+
+.btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
